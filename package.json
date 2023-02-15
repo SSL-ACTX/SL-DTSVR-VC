@@ -1,0 +1,22 @@
+{
+  "name": "sl-image-compression-proxy",
+  "main": "server.js",
+  "private": true,
+  "version": "1.1.2",
+  "description": "Data compression service that converts images to low-res WebP or JPEG using sharp.",
+  "author": "SSL-ACTX",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "express": "4.17.1",
+    "lodash": "^4.17.21",
+    "request": "^2.88.2",
+    "sharp": "^0.30.5"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}

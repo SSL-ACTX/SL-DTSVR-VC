@@ -1,0 +1,19 @@
+{
+  "name": "SL-DTSVR-VC",
+  "description":
+    "Data compression service that converts images to the lower quality and save data using Sharp",
+  "repository": "https://github.com/SSL-ACTX/SL-DTSVR-VC",
+  "website": "...",
+  "logo": "...",
+  "keywords": ["proxy", "compression", "data saving", "compress image", "webp"],
+  "env": {
+    "LOGIN": {
+      "description": "If you want to password-protect your service, set your login here.",
+      "required": false
+    },
+    "PASSWORD": {
+      "description": "If you want to password-protect your service, set your password here.",
+      "required": false
+    }
+  }
+}
