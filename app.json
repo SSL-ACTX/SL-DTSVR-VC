@@ -1,7 +1,7 @@
 {
   "name": "SL-DTSVR-VC",
   "description":
-    "Data compression service that converts images to the lower quality and save data using Sharp",
+    "Data compression service that converts images to the lower quality to save data.",
   "repository": "https://github.com/SSL-ACTX/SL-DTSVR-VC",
   "website": "...",
   "logo": "...",
