@@ -6,9 +6,19 @@ const compress = require('./compress')
 const bypass = require('./bypass')
 const copyHeaders = require('./copyHeaders')
 
+const allowedUrls = {
+  'example1': 'https://example1.com/data',
+  'example2': 'https://example2.com/data'
+};
+
 function proxy(req, res) {
+  const targetUrl = allowedUrls[req.params.url];
+  if (!targetUrl) {
+    return res.status(400).send('Invalid URL parameter');
+  }
+
   request.get(
-    req.params.url,
+    targetUrl,
     {
       headers: {
         ...pick(req.headers, ['cookie', 'dnt', 'referer']),
