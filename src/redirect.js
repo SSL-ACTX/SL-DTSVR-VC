@@ -1,3 +1,13 @@
+function isLocalUrl(path) {
+  try {
+    return (
+      new URL(path, "https://example.com").origin === "https://example.com"
+    );
+  } catch (e) {
+    return false;
+  }
+}
+
 function redirect(req, res) {
   if (res.headersSent) return
 
@@ -6,7 +16,12 @@ function redirect(req, res) {
   res.removeHeader('expires')
   res.removeHeader('date')
   res.removeHeader('etag')
-  res.setHeader('location', encodeURI(req.params.url))
+  const targetUrl = req.params.url;
+  if (isLocalUrl(targetUrl)) {
+    res.setHeader('location', encodeURI(targetUrl))
+  } else {
+    res.setHeader('location', '/')
+  }
   res.status(302).end()
 }
 
